@@ -1,0 +1,59 @@
+{
+  "resource": "Authentication",
+  "http_method": "POST",
+  "route": "/auth/",
+  "description": "user already exist",
+  "explanation": null,
+  "parameters": [
+    {
+      "name": "email",
+      "description": "Email address"
+    },
+    {
+      "name": "password",
+      "description": "User password"
+    },
+    {
+      "name": "password_confirmation",
+      "description": "Confirmation password"
+    },
+    {
+      "name": "confirm_success_url",
+      "description": "Redirect URL"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "POST",
+      "request_path": "/auth/",
+      "request_body": "email=kim%40bechtelarhodkiewicz.biz&password=abc123456&password_confirmation=abc123456&confirm_success_url=localhost%3A3000",
+      "request_headers": {
+        "Host": "example.org",
+        "Content-Type": "application/x-www-form-urlencoded",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/x-www-form-urlencoded",
+      "response_status": 422,
+      "response_status_text": "Unprocessable Entity",
+      "response_body": "{\n  \"status\": \"error\",\n  \"data\": {\n    \"id\": null,\n    \"provider\": \"email\",\n    \"uid\": \"\",\n    \"name\": null,\n    \"nickname\": null,\n    \"image\": null,\n    \"email\": \"kim@bechtelarhodkiewicz.biz\",\n    \"created_at\": null,\n    \"updated_at\": null\n  },\n  \"errors\": {\n    \"email\": [\n      \"already in use\"\n    ],\n    \"full_messages\": [\n      \"Email already in use\"\n    ]\n  }\n}",
+      "response_headers": {
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-XSS-Protection": "1; mode=block",
+        "X-Content-Type-Options": "nosniff",
+        "Content-Type": "application/json; charset=utf-8",
+        "Cache-Control": "no-cache",
+        "X-Request-Id": "0dacd207-89e9-41cf-9f5a-ebc62ddb721b",
+        "X-Runtime": "0.021892",
+        "Vary": "Origin",
+        "Content-Length": "259"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": "curl \"http://localhost:3000/auth/\" -d 'email=kim%40bechtelarhodkiewicz.biz&password=abc123456&password_confirmation=abc123456&confirm_success_url=localhost%3A3000' -X POST \\\n\t-H \"Host: example.org\" \\\n\t-H \"Content-Type: application/x-www-form-urlencoded\" \\\n\t-H \"Cookie: \""
+    }
+  ]
+}

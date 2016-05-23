@@ -1,0 +1,56 @@
+{
+  "resource": "TODO",
+  "http_method": "GET",
+  "route": "/todos.json",
+  "description": "Name showed on index page",
+  "explanation": "This is example comment which is added to documentation",
+  "parameters": [
+    {
+      "name": "parameter1",
+      "description": "The thing you want to greet"
+    },
+    {
+      "name": "parameter2",
+      "description": "The thing you want to greet"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "GET",
+      "request_path": "/todos.json",
+      "request_body": null,
+      "request_headers": {
+        "Access-Token": "jG4scyRe3V294g6kYX_uDA",
+        "Token-Type": "Bearer",
+        "Client": "Aj5lrsZRtUwxFUioXfoxTg",
+        "Expiry": "1465234876",
+        "Uid": "federico@dickensparisian.co",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": null,
+      "response_status": 200,
+      "response_status_text": "OK",
+      "response_body": "{\n  \"status\": \"success\",\n  \"data\": {\n    \"todos\": [\n      {\n        \"id\": 1,\n        \"title\": \"This is Fake data which is put to TO\",\n        \"completed\": null,\n        \"order\": null,\n        \"url\": \"http://example.org/todos/1\"\n      }\n    ]\n  }\n}",
+      "response_headers": {
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-XSS-Protection": "1; mode=block",
+        "X-Content-Type-Options": "nosniff",
+        "Content-Type": "application/json; charset=utf-8",
+        "ETag": "W/\"509e99ef4f09b6f71c7b16c370df313a\"",
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "X-Request-Id": "c4cfc7d0-9f38-4541-be50-7d8a9460f05e",
+        "X-Runtime": "0.162161",
+        "Vary": "Origin",
+        "Content-Length": "160"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": "curl \"http://localhost:3000/todos.json\" -X GET \\\n\t-H \"Access-Token: jG4scyRe3V294g6kYX_uDA\" \\\n\t-H \"Token-Type: Bearer\" \\\n\t-H \"Client: Aj5lrsZRtUwxFUioXfoxTg\" \\\n\t-H \"Expiry: 1465234876\" \\\n\t-H \"Uid: federico@dickensparisian.co\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+    }
+  ]
+}

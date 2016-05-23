@@ -1,0 +1,44 @@
+Name showed on index page
+-------------------------
+
+Parameters:
+  * parameter1 - The thing you want to greet
+  * parameter2 - The thing you want to greet
+
+Request:
+  GET /todos.json
+  Access-Token: jG4scyRe3V294g6kYX_uDA
+  Client: Aj5lrsZRtUwxFUioXfoxTg
+  Cookie: 
+  Expiry: 1465234876
+  Host: example.org
+  Token-Type: Bearer
+  Uid: federico@dickensparisian.co
+
+Response:
+  Status: 200 OK
+  Cache-Control: max-age=0, private, must-revalidate
+  Content-Length: 160
+  Content-Type: application/json; charset=utf-8
+  ETag: W/"509e99ef4f09b6f71c7b16c370df313a"
+  Vary: Origin
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: SAMEORIGIN
+  X-Request-Id: c4cfc7d0-9f38-4541-be50-7d8a9460f05e
+  X-Runtime: 0.162161
+  X-XSS-Protection: 1; mode=block
+
+  {
+    "status": "success",
+    "data": {
+      "todos": [
+        {
+          "id": 1,
+          "title": "This is Fake data which is put to TO",
+          "completed": null,
+          "order": null,
+          "url": "http://example.org/todos/1"
+        }
+      ]
+    }
+  }

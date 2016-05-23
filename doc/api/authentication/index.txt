@@ -1,0 +1,246 @@
+incorrect login and password
+----------------------------
+
+Parameters:
+  * email - Email address
+  * password - Password for user
+
+Request:
+  POST /auth/sign_in
+  Content-Type: application/x-www-form-urlencoded
+  Cookie: 
+  Host: example.org
+
+  email=user%40dontexistr.com&password=wrong_password
+
+Response:
+  Status: 401 Unauthorized
+  Cache-Control: no-cache
+  Content-Length: 59
+  Content-Type: application/json; charset=utf-8
+  Vary: Origin
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: SAMEORIGIN
+  X-Request-Id: 19f62e07-89dc-498e-b4de-62561e9580c8
+  X-Runtime: 0.048926
+  X-XSS-Protection: 1; mode=block
+
+  {
+    "errors": [
+      "Invalid login credentials. Please try again."
+    ]
+  }
+
+
+user dosn't confirm registration process
+----------------------------------------
+
+Parameters:
+  * email - Email address
+  * password - Password for user
+
+Request:
+  POST /auth/sign_in
+  Content-Type: application/x-www-form-urlencoded
+  Cookie: 
+  Host: example.org
+
+  email=otho_wiegand%40borer.org&password=abc123456
+
+Response:
+  Status: 401 Unauthorized
+  Cache-Control: no-cache
+  Content-Length: 188
+  Content-Type: application/json; charset=utf-8
+  Vary: Origin
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: SAMEORIGIN
+  X-Request-Id: 257c332f-21a6-4506-846c-463ee798a9b9
+  X-Runtime: 0.011944
+  X-XSS-Protection: 1; mode=block
+
+  {
+    "success": false,
+    "errors": [
+      "A confirmation email was sent to your account at 'otho_wiegand@borer.org'. You must follow the instructions in the email before your account can be activated"
+    ]
+  }
+
+
+correct login and password
+--------------------------
+
+Parameters:
+  * email - Email address
+  * password - Password for user
+
+Request:
+  POST /auth/sign_in
+  Content-Type: application/x-www-form-urlencoded
+  Cookie: 
+  Host: example.org
+
+  email=fatima%40mante.io&password=abc123456
+
+Response:
+  Status: 200 OK
+  Cache-Control: max-age=0, private, must-revalidate
+  Content-Length: 138
+  Content-Type: application/json; charset=utf-8
+  ETag: W/"73eca99529acd450c6b683467a30326a"
+  Vary: Origin
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: SAMEORIGIN
+  X-Request-Id: dea31942-eee0-4acc-9f2c-29f32f4df79d
+  X-Runtime: 0.326066
+  X-XSS-Protection: 1; mode=block
+  access-token: e4s3Iq2GAtRi5TWsgpN3lQ
+  client: TH3awyVbWLfzXzeZPr3ebw
+  expiry: 1465234874
+  token-type: Bearer
+  uid: fatima@mante.io
+
+  {
+    "data": {
+      "id": 1,
+      "email": "fatima@mante.io",
+      "provider": "email",
+      "uid": "fatima@mante.io",
+      "name": "RSpec Account",
+      "nickname": null,
+      "image": null
+    }
+  }
+
+
+user already exist
+------------------
+
+Parameters:
+  * email - Email address
+  * password - User password
+  * password_confirmation - Confirmation password
+  * confirm_success_url - Redirect URL
+
+Request:
+  POST /auth/
+  Content-Type: application/x-www-form-urlencoded
+  Cookie: 
+  Host: example.org
+
+  email=kim%40bechtelarhodkiewicz.biz&password=abc123456&password_confirmation=abc123456&confirm_success_url=localhost%3A3000
+
+Response:
+  Status: 422 Unprocessable Entity
+  Cache-Control: no-cache
+  Content-Length: 259
+  Content-Type: application/json; charset=utf-8
+  Vary: Origin
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: SAMEORIGIN
+  X-Request-Id: 0dacd207-89e9-41cf-9f5a-ebc62ddb721b
+  X-Runtime: 0.021892
+  X-XSS-Protection: 1; mode=block
+
+  {
+    "status": "error",
+    "data": {
+      "id": null,
+      "provider": "email",
+      "uid": "",
+      "name": null,
+      "nickname": null,
+      "image": null,
+      "email": "kim@bechtelarhodkiewicz.biz",
+      "created_at": null,
+      "updated_at": null
+    },
+    "errors": {
+      "email": [
+        "already in use"
+      ],
+      "full_messages": [
+        "Email already in use"
+      ]
+    }
+  }
+
+
+create new user
+---------------
+
+Parameters:
+  * email - Email address
+  * password - User password
+  * password_confirmation - Confirmation password
+  * confirm_success_url - Redirect URL
+
+Request:
+  POST /auth/
+  Content-Type: application/x-www-form-urlencoded
+  Cookie: 
+  Host: example.org
+
+  email=taurean.hahn%40ko.info&password=abc123456&password_confirmation=abc123456&confirm_success_url=localhost%3A3000
+
+Response:
+  Status: 200 OK
+  Cache-Control: max-age=0, private, must-revalidate
+  Content-Length: 236
+  Content-Type: application/json; charset=utf-8
+  ETag: W/"9e519a4ee240ec7c2c2ae9f983f790e9"
+  Vary: Origin
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: SAMEORIGIN
+  X-Request-Id: 2baf7444-9e42-41d1-b671-d26a92f744f4
+  X-Runtime: 0.877363
+  X-XSS-Protection: 1; mode=block
+
+  {
+    "status": "success",
+    "data": {
+      "id": 2,
+      "provider": "email",
+      "uid": "taurean.hahn@ko.info",
+      "name": null,
+      "nickname": null,
+      "image": null,
+      "email": "taurean.hahn@ko.info",
+      "created_at": "2016-05-23T17:41:15.046Z",
+      "updated_at": "2016-05-23T17:41:15.046Z"
+    }
+  }
+
+
+logout current logged user
+--------------------------
+
+Request:
+  DELETE /auth/sign_out
+  Access-Token: kodSZfUL8Nw8LVX-osIf2g
+  Client: 6ZqpKXclN7P6ARoaxcdotw
+  Content-Type: application/x-www-form-urlencoded
+  Cookie: 
+  Expiry: 1465234876
+  Host: example.org
+  Token-Type: Bearer
+  Uid: brant.upton@cormier.co
+
+Response:
+  Status: 200 OK
+  Cache-Control: max-age=0, private, must-revalidate
+  Content-Length: 16
+  Content-Type: application/json; charset=utf-8
+  ETag: W/"c955e57777ec0d73639dca6748560d00"
+  Vary: Origin
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: SAMEORIGIN
+  X-Request-Id: 795a5130-d92c-487e-8cd1-00e47a2560a0
+  X-Runtime: 0.153307
+  X-XSS-Protection: 1; mode=block
+
+  {
+    "success": true
+  }
+
+
