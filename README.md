@@ -24,10 +24,22 @@
 - [spirng](https://github.com/rails/spring )
 
 ## Installation
+
+#### Local
 ```
-$ git git@github.com:Hawatel/rails-api-starter.git
+$ git git@github.com:Hawatel/rails5-api-starter.git
 $ bundel install
 ```
+
+#### Using docker-compose
+```
+$docker-compose build
+$docker-compose run rails5-api-starter bin/rails db:migrate RAILS_ENV=development
+$docker-compose up
+```
+
+
+
 
 ## Usage
 
