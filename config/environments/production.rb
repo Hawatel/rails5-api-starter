@@ -28,6 +28,7 @@ Rails.application.configure do
     config.public_file_server.headers = { 'Cache-Control' => 'public, max-age=172800' }
   else
     config.action_controller.perform_caching = false
+    config.cache_store = [:null_store]
   end
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
   # config.action_controller.asset_host = 'http://assets.example.com'
