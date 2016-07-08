@@ -1,8 +1,7 @@
 source 'https://rubygems.org'
 
 # Rails
-gem 'rails', github: "rails/rails", branch: "v5.0.0.rc1"
-
+gem 'rails', '5.0.0'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 
