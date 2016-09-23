@@ -34,6 +34,15 @@ gem 'hiredis'
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 gem 'rack-cors'
 
+# Sidekiq as delay job manager
+gem 'sidekiq', '~> 4.1.2'
+
+# Cron for JOBS. Read more: https://github.com/ondrejbartas/sidekiq-cron
+gem 'sidekiq-cron', '~> 0.4.0'
+gem 'sidekiq-failures', '~> 0.4.5'
+gem 'sidekiq-statistic'
+gem 'sinatra', github: 'sinatra/sinatra', branch: 'master'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
