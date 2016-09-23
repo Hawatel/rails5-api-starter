@@ -23,7 +23,7 @@ Rails.application.configure do
     config.action_controller.perform_caching = true
     config.cache_store = :readthis_store, {
         expires_in: 30.minutes.to_i,
-        redis: { url: 'redis://localhost:6379/0/cache', driver: :hiredis }
+        redis: { url: ENV['REDIS_CACHE_URL'], driver: :hiredis }
     }
     config.public_file_server.headers = { 'Cache-Control' => 'public, max-age=172800' }
   else

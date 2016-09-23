@@ -1,9 +1,35 @@
 version: '2'
 services:
   rails5-api-starter:
+     environment:
+      - REDIS_CACHE_URL=redis://redis:6379/0/cache
+      - REDIS_SIDEKIQ=redis://redis:6379/12
      build: .
      command: bin/rails server --port 3000 --binding 0.0.0.0
      ports:
       - "3000:3000"
      volumes:
       - .:/app
+     links:
+      - redis
+     depends_on:
+      - redis
+
+  redis:
+     image: redis:latest
+     command: redis-server /app/config/redis.conf
+     build: .
+     volumes:
+      - .:/app
+     ports:
+      - "6379"
+
+  sidekiq:
+     environment:
+      - REDIS_URL=redis://redis:6379/12
+     depends_on:
+      - redis
+     build: .
+     command: sidekiq -c 25 -q default
+     volumes:
+      - '.:/app'
