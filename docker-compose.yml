@@ -1,35 +1,55 @@
 version: '2'
 services:
-  rails5-api-starter:
+  web:
      environment:
-      - REDIS_CACHE_URL=redis://redis:6379/0/cache
-      - REDIS_SIDEKIQ=redis://redis:6379/12
+      - REDIS_URL=redis://redis:6379
      build: .
      command: bin/rails server --port 3000 --binding 0.0.0.0
      ports:
       - "3000:3000"
      volumes:
       - .:/app
+     volumes_from:
+      - bundle
      links:
       - redis
+      - postgres
      depends_on:
       - redis
 
+  postgres:
+     image: postgres:9.4
+     environment:
+      - POSTGRES_PASSWORD=SecurePasswordPG
+     ports:
+      - "5432:5432"
+     volumes:
+      - /tmp/rails5apistarter/postgresql:/var/lib/postgresql/data
+
   redis:
-     image: redis:latest
+     image: redis
      command: redis-server /app/config/redis.conf
-     build: .
      volumes:
       - .:/app
      ports:
       - "6379"
 
   sidekiq:
+     image: rails5apistarter_web
      environment:
       - REDIS_URL=redis://redis:6379/12
+     links:
+      - redis
+      - postgres
      depends_on:
       - redis
-     build: .
-     command: sidekiq -c 25 -q default
      volumes:
       - '.:/app'
+     volumes_from:
+      - bundle
+     command: sidekiq -c 25 -q default
+
+  bundle:
+    image: rails5apistarter_web
+    volumes:
+      - /tmp/bundle:/bundle

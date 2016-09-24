@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/home/daniel/Workspace/current/hawatel-api5-starterkit/app/controllers/todos_controller.rb": [
+      "/app/app/controllers/todos_controller.rb": [
         1,
         1,
         1,
@@ -63,21 +63,21 @@
         null,
         null
       ],
-      "/home/daniel/Workspace/current/hawatel-api5-starterkit/app/controllers/application_controller.rb": [
+      "/app/app/controllers/application_controller.rb": [
         1,
         1,
         1,
         null,
         null
       ],
-      "/home/daniel/Workspace/current/hawatel-api5-starterkit/spec/models/todo_spec.rb": [
+      "/app/spec/models/todo_spec.rb": [
         1,
         null,
         1,
         1,
         null
       ],
-      "/home/daniel/Workspace/current/hawatel-api5-starterkit/app/models/todo.rb": [
+      "/app/app/models/todo.rb": [
         1,
         null,
         1,
@@ -93,12 +93,12 @@
         null,
         null
       ],
-      "/home/daniel/Workspace/current/hawatel-api5-starterkit/app/models/application_record.rb": [
+      "/app/app/models/application_record.rb": [
         1,
         1,
         null
       ],
-      "/home/daniel/Workspace/current/hawatel-api5-starterkit/spec/requests/auth_spec.rb": [
+      "/app/spec/requests/auth_spec.rb": [
         1,
         1,
         1,
@@ -182,7 +182,7 @@
         0,
         null
       ],
-      "/home/daniel/Workspace/current/hawatel-api5-starterkit/spec/requests/todos_spec.rb": [
+      "/app/spec/requests/todos_spec.rb": [
         1,
         1,
         1,
@@ -232,7 +232,7 @@
         2,
         null
       ],
-      "/home/daniel/Workspace/current/hawatel-api5-starterkit/spec/routing/todos_routing_spec.rb": [
+      "/app/spec/routing/todos_routing_spec.rb": [
         1,
         null,
         1,
@@ -266,6 +266,6 @@
         null
       ]
     },
-    "timestamp": 1464028768
+    "timestamp": 1474880352
   }
 }

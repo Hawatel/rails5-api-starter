@@ -5,4 +5,10 @@ Rails.application.routes.draw do
 
   resources :todos, :defaults => { :format => 'json' }
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+  # Secure access to sidekiq Web Interface by username and passwod
+  Sidekiq::Web.use Rack::Auth::Basic do |username, password|
+    username == ENV["SIDEKIQ_USERNAME"] && password == ENV["SIDEKIQ_PASSWORD"]
+  end if Rails.env.production?
+  mount Sidekiq::Web => '/sidekiq'
 end

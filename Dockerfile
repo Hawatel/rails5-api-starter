@@ -7,6 +7,11 @@ RUN mkdir $APP_HOME
 WORKDIR $APP_HOME
 
 ADD Gemfile* $APP_HOME/
-RUN bundle install
+
+ENV BUNDLE_GEMFILE=$APP_HOME/Gemfile \
+    BUNDLE_JOBS=2 \
+    BUNDLE_PATH=/bundle
+
+RUN bundle install --retry 3
 
 ADD . $APP_HOME
