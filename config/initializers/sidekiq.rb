@@ -2,12 +2,12 @@ include Sidekiq::Worker
 
 # Configuratopn for Sidekiq Server
 Sidekiq.configure_server do |config|
-  config.redis = { url: ENV['REDIS_CACHE_URL'] }
+  config.redis = { url: "#{ENV['REDIS_URL']}/12" }
 end
 
 # Configuration for Sidekiq client
 Sidekiq.configure_client do |config|
-  config.redis = { url: ENV['REDIS_CACHE_URL'] }
+  config.redis = { url: "#{ENV['REDIS_URL']}/12" }
 end
 
 # Configure Sidekiq cron jobs. Load data from external, YML file

@@ -20,7 +20,7 @@ Rails.application.configure do
     config.action_controller.perform_caching = true
     config.cache_store = :readthis_store, {
         expires_in: 24.hours.to_i,
-        redis: { url: ENV['REDIS_CACHE_URL'], driver: :hiredis }
+        redis: { url: "#{ENV['REDIS_URL']}/0/cache", driver: :hiredis }
     }
     config.public_file_server.headers = { 'Cache-Control' => 'public, max-age=172800' }
   else
@@ -44,6 +44,9 @@ Rails.application.configure do
   # Raise an error on page load if there are pending migrations.
   config.active_record.migration_error = :page_load
 
+  # Better errors
+  # TODO fix issue with better error
+  # BetterErrors::Middleware.allow_ip! "0.0.0.0/0"
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
