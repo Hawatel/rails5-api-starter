@@ -22,3 +22,6 @@
 
 # Rubymine
 /.idea
+
+# Documentation
+/doc/spec_documentation/*

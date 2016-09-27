@@ -1,0 +1,52 @@
+{
+  "$schema": "http://json-schema.org/draft-04/hyper-schema",
+  "title": "FIXME - Auth",
+  "description": "FIXME",
+  "stability": "prototype",
+  "strictProperties": true,
+  "type": [
+    "object"
+  ],
+  "properties": {
+    "id": {
+      "description": "unique identifier of auth",
+      "readOnly": true,
+      "type": [
+        "integer"
+      ]
+    },
+    "email": {
+      "description": "unique name of auth",
+      "type": [
+        "string"
+      ]
+    },
+    "password": {
+      "description": "password for user",
+      "type": [
+        "string"
+      ]
+    },
+    "password_confirmation": {
+      "description": "confirm password for user",
+      "type": [
+        "string"
+      ]
+    },
+    "created_at": {
+      "description": "when auth was created",
+      "format": "date-time",
+      "type": [
+        "string"
+      ]
+    },
+    "updated_at": {
+      "description": "when auth was updated",
+      "format": "date-time",
+      "type": [
+        "string"
+      ]
+    }
+  },
+  "required": ["email", "password", "password_confirmation"]
+}

@@ -1,0 +1,34 @@
+#%RAML 1.0
+title: New API
+version: v1
+protocols: [ HTTP, HTTPS ]
+baseUri: https://api.starterkit.hawatel.com
+mediaType: application/json
+/auth:
+  get:
+    responses:
+      200:
+        body:
+          application/json:
+            example: |
+              {
+                "message" : "Hello World"
+              }
+  post:
+    description: "Create new user"
+    body:
+      application/json:
+        schema: !include schemas/auth/post.request.json
+        example: |
+          {
+            "id": 123233,
+            "name": "example"
+          }
+    responses:
+      200:
+        body:
+          application/json:
+            example: |
+              {
+                "message" : "Hello World"
+              }
