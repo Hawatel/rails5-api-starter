@@ -29,7 +29,7 @@
 - [rails_panel](https://github.com/dejan/rails_panel)
 - [pry-byebug](https://github.com/deivid-rodriguez/pry-byebug)
 - [sidekiq](https://github.com/mperham/sidekiq)
-
+- [prmd](https://github.com/interagent/prmd)
 
 ### Installation process
 
@@ -113,12 +113,21 @@ $ docker-compose run -e "RAILS_ENV=test" web rails db:create
 $ docker-compose run -e "RAILS_ENV=test" web rails db:migrate
 ```
 
+#### API Documentation based on rspec-api-documentation
+
+```
+$ docker-compose run -e "RAILS_ENV=test" web rake docs:generate
+```
+
 
 ## License
 
 The Starter Kit is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
 
 ## Useful links
+
+#### Design API
+- https://geemus.gitbooks.io/http-api-design/content/en/
 - https://labs.omniti.com/labs/jsend
 - http://jsonapi.org/
 

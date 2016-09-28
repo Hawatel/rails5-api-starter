@@ -21,6 +21,10 @@ gem 'jbuilder', :git => 'git://github.com/diwaniuk/jbuilder.git'
 # Read more: https://github.com/brianmario/yajl-ruby
 gem 'yajl-ruby', require: 'yajl'
 
+# Schema validation
+# https://github.com/ruby-json-schema/json-schema
+gem 'json-schema'
+
 # Timeout for long-running request
 gem 'rack-timeout'
 
@@ -100,6 +104,12 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+
+  # JSON Schema tooling
+  # Read more:
+  # - https://github.com/interagent/prmd
+  # - https://spacetelescope.github.io/understanding-json-schema/index.html
+  # gem 'prmd'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
