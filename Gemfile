@@ -32,6 +32,9 @@ gem 'rack-timeout'
 gem 'devise_token_auth', github: "lynndylanhurley/devise_token_auth", branch: "master"
 gem 'omniauth'
 
+# CanCan is an authorization library for Ruby on Rails which restricts what resources a given user is allowed to access.
+gem 'cancancan'
+
 # Faster & modern implementation of client to integrate Rails with Redis
 # configuration in: config/initializers/readthis.rb (Fault Tolerant enable)
 # Read more: https://github.com/sorentwo/readthis
