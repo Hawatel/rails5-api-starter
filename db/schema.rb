@@ -43,6 +43,7 @@ ActiveRecord::Schema.define(version: 20160517090314) do
     t.string   "nickname"
     t.string   "image"
     t.string   "email"
+    t.boolean  "admin"
     t.text     "tokens"
     t.datetime "created_at"
     t.datetime "updated_at"

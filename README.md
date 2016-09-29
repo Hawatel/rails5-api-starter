@@ -11,6 +11,7 @@
 - [omniauth](https://github.com/intridea/omniauth )
 - [devise](https://github.com/plataformatec/devise)
 - [devise_token_auth](https://github.com/lynndylanhurley/devise_token_auth)
+- [cancancan](https://github.com/CanCanCommunity/cancancan)
 - [jbuilder](https://github.com/rails/jbuilder)
 - [rspec-api-documentation](https://github.com/zipmark/rspec_api_documentation )
 - [yard](https://github.com/lsegal/yard)

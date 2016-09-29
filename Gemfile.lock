@@ -73,6 +73,7 @@ GEM
     builder (3.2.2)
     byebug (9.0.5)
     callsite (0.0.11)
+    cancancan (1.15.0)
     coderay (1.1.1)
     concurrent-ruby (1.0.2)
     connection_pool (2.2.0)
@@ -267,6 +268,7 @@ PLATFORMS
 DEPENDENCIES
   awesome_print
   byebug
+  cancancan
   devise_token_auth!
   factory_girl_rails
   faker
