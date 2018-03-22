@@ -4,9 +4,7 @@ source 'https://rubygems.org'
 gem 'rails', '5.0.0'
 
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
-gem 'pg'
-
+gem 'pg', '0.18.4'
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 
@@ -53,6 +51,8 @@ gem 'sidekiq-cron', '~> 0.4.0'
 gem 'sidekiq-failures', '~> 0.4.5'
 gem 'sidekiq-statistic'
 gem 'sinatra', github: 'sinatra/sinatra', branch: 'master'
+
+gem 'concurrent-ruby', '1.0.5'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -117,3 +117,7 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'grape'
+gem 'factory_bot'
+gem 'grape-rails-routes'
+gem 'grape-active_model_serializers'
