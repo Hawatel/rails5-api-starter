@@ -13,4 +13,10 @@ Rails.application.routes.draw do
     username == ENV["SIDEKIQ_USERNAME"] && password == ENV["SIDEKIQ_PASSWORD"]
   end if Rails.env.production?
   mount Sidekiq::Web => '/sidekiq'
+
+  #mount API::Base, at: "/"
+  
+  # namespace the controllers without affecting the URI
+  mount API::Base, at: "/"
+  
 end

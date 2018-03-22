@@ -31,6 +31,8 @@ RSpec.describe TodosController, :type => :controller do
     skip("Add a hash of attributes invalid for your model")
   }
 
+  
+
   # This should return the minimal set of values that should be in the session
   # in order to pass any filters (e.g. authentication) defined in
   # TodosController. Be sure to keep this updated too.
@@ -149,5 +151,5 @@ RSpec.describe TodosController, :type => :controller do
       expect(response).to redirect_to(todos_url)
     end
   end
-
+ 
 end
