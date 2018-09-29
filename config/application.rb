@@ -18,6 +18,17 @@ Bundler.require(*Rails.groups)
 
 module HawatelApi5Starterkit
   class Application < Rails::Application
+    config.action_cable.mount_path = '/cable'
+
+    config.middleware.insert_before ActionDispatch::Static, Rack::Cors do
+      allow do
+        origins "*"
+        resource "*", headers: :any, methods: [:get, 
+            :post, :put, :delete, :options]
+      end
+    end
+    config.active_record.raise_in_transactional_callbacks = true
+
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.

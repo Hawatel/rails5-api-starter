@@ -2,11 +2,15 @@ source 'https://rubygems.org'
 
 # Rails
 gem 'rails', '5.0.0'
-
+gem 'grape'
+#gem 'rack-cors', :require => 'rack/cors'
+gem 'rack-cors', '~> 0.4.0'
+gem 'grape-active_model_serializers'
+gem 'grape-swagger'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
-gem 'pg'
-
+gem 'pg', '0.20'
+gem 'slim'
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 
@@ -29,7 +33,7 @@ gem 'json-schema'
 gem 'rack-timeout'
 
 # Token based authentication for Rails JSON APIs
-gem 'devise_token_auth', github: "lynndylanhurley/devise_token_auth", branch: "master"
+gem 'devise_token_auth'
 gem 'omniauth'
 
 # CanCan is an authorization library for Ruby on Rails which restricts what resources a given user is allowed to access.
@@ -43,7 +47,7 @@ gem 'readthis'
 gem 'hiredis'
 
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
-gem 'rack-cors'
+#gem 'rack-cors'
 
 # Sidekiq as delay job manager
 gem 'sidekiq', '~> 4.1.2'
@@ -68,7 +72,11 @@ group :development, :test do
 
   # Read more: https://github.com/collectiveidea/json_spec
   gem 'json_spec'
-
+   gem 'factory_bot_rails', '~> 4.0'
+  gem 'shoulda-matchers', '~> 3.1'
+  gem 'faker'
+  gem 'database_cleaner'
+  gem 'action-cable-testing'
   # Read more: https://github.com/charliesome/better_errors
   # gem "better_errors"
   # gem 'binding_of_caller'
@@ -94,7 +102,7 @@ group :development, :test do
   gem 'faker'
 
   # Use Factory Girl for generating random test data
-  gem 'factory_girl_rails'
+  #gem 'factory_girl_rails'
 
   # Fake email
   gem "letter_opener",:require => false
@@ -116,4 +124,5 @@ group :development do
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+#gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'tzinfo-data', platforms: [:mingw, :mswin]

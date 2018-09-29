@@ -14,14 +14,14 @@
       <img src="./assets/0.10.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2016-09-27T12:45:34+00:00">2016-09-27T12:45:34+00:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2018-09-24T12:58:40+00:00">2018-09-24T12:58:40+00:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="red">78.79%</span></span>
+    (<span class="covered_percent"><span class="red">79.71%</span></span>
      covered at
      <span class="covered_strength">
        <span class="red">
@@ -32,8 +32,8 @@
   <a name="AllFiles"></a>
   <div>
     <b>6</b> files in total.
-    <b>66</b> relevant lines. 
-    <span class="green"><b>52</b> lines covered</span> and
+    <b>69</b> relevant lines. 
+    <span class="green"><b>55</b> lines covered</span> and
     <span class="red"><b>14</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -53,9 +53,9 @@
       <tr>
         <td class="strong"><a href="#67d8f4f56b98a41ec0384f715547f7e146b97d14" class="src_link" title="../controllers.lication_controller.rb">../controllers.lication_controller.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>5</td>
-        <td>3</td>
-        <td>3</td>
+        <td>6</td>
+        <td>4</td>
+        <td>4</td>
         <td>0</td>
         <td>1.0</td>
       </tr>
@@ -103,9 +103,9 @@
       <tr>
         <td class="strong"><a href="#665b722713e051fb194722950ccb59acb7f65fa5" class="src_link" title="spec/support/settings/rspec_api_documentation.rb">spec/support/settings/rspec_api_documentation.rb</a></td>
         <td class="green strong">100.0 %</td>
+        <td>10</td>
         <td>4</td>
-        <td>2</td>
-        <td>2</td>
+        <td>4</td>
         <td>0</td>
         <td>1.0</td>
       </tr>
@@ -131,8 +131,8 @@
     <h3>../controllers.lication_controller.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>3</b> relevant lines. 
-      <span class="green"><b>3</b> lines covered</span> and
+      <b>4</b> relevant lines. 
+      <span class="green"><b>4</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -158,13 +158,19 @@
           <code class="ruby">  include ActionController::Caching</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="4">
+        <li class="covered" data-hits="1" data-linenumber="4">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  include CanCan::ControllerAdditions</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="5">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="5">
+        <li class="never" data-hits="" data-linenumber="6">
           
           
           <code class="ruby">end</code>
@@ -1001,8 +1007,8 @@
     <h3>spec/support/settings/rspec_api_documentation.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>2</b> relevant lines. 
-      <span class="green"><b>2</b> lines covered</span> and
+      <b>4</b> relevant lines. 
+      <span class="green"><b>4</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -1029,6 +1035,42 @@
         </li>
       
         <li class="never" data-hits="" data-linenumber="4">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="5">
+          
+          
+          <code class="ruby">  # Output format</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="6">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  config.format = [:html]</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="7">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="8">
+          
+          
+          <code class="ruby">  # Change the name of the API on index pages</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="9">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  config.api_name = &quot;API Documentation&quot;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="10">
           
           
           <code class="ruby">end</code>

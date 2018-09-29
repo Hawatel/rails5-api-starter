@@ -8,12 +8,11 @@ WORKDIR $APP_HOME
 
 ADD Gemfile* $APP_HOME/
 
-#ENV BUNDLE_GEMFILE=$APP_HOME/Gemfile \
-#    BUNDLE_JOBS=2 \
-#    BUNDLE_PATH=/bundle
+ENV BUNDLE_GEMFILE=$APP_HOME/Gemfile \
+    BUNDLE_JOBS=2 \
+    BUNDLE_PATH=/bundle
 RUN ls -al
 
+RUN bundle install --retry 3
 
 ADD . $APP_HOME
-
-RUN bundle install --retry 3

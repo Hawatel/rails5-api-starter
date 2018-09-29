@@ -5,11 +5,12 @@ services:
       - REDIS_URL=redis://redis:6379
      build: .
      command: bin/rails server --port 3000 --binding 0.0.0.0
-     #command: while :; do echo 'Hit CTRL+C'; sleep 1; done
      ports:
       - "3000:3000"
      volumes:
       - .:/app
+     volumes_from:
+      - bundle
      links:
       - redis
       - postgres
@@ -32,4 +33,5 @@ services:
       - .:/app
      ports:
       - "6379"
-
+      sysctls:
+        net.core.somaxconn: '511'

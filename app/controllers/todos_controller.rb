@@ -1,6 +1,17 @@
 class TodosController < ApplicationController
   before_action :set_todo, only: [:show, :update, :destroy]
-  before_action :authenticate_user!
+  #before_action :authenticate_user!
+
+  def todohome    
+    #render inline: '', layout: 'application'
+  @todos = Todo.all
+  #render json: {status: 'SUCCESS', message: 'Loaded all posts', data: posts}, status: :ok
+  end
+ 
+  def welcome    
+    @todos = Todo.all
+    #render inline: '', layout: 'application'
+  end
 
   # GET /todos
   # GET /todos.json
