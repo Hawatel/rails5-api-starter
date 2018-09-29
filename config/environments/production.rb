@@ -4,6 +4,11 @@ Rails.application.configure do
   # Code is not reloaded between requests.
   config.cache_classes = true
 
+  #new added
+  config.action_cable.mount_path = '/cable'
+  config.action_cable.url = 'ws://localhost:3000/cable'
+  #config.action_cable.allowed_request_origins = [ /http:\/\/localhost:*/ ]
+  config.action_cable.allowed_request_origins = [/http:\/\/*/, /https:\/\/*/]
   # Eager load code on boot. This eager loads most of Rails and
   # your application in memory, allowing both threaded web servers
   # and those relying on copy on write to perform better.
